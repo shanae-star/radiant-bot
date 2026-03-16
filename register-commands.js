@@ -3,7 +3,20 @@ import 'dotenv/config';
 const commands = [
   {
     name: 'book',
-    description: 'Get the booking link',
+    description: 'See all spaces you can reserve, or look up a specific one',
+    type: 1,
+    options: [
+      {
+        name: 'name',
+        description: 'Space name, e.g. "gallery", "print", "ceramics", "207"',
+        type: 3, // STRING
+        required: false,
+      },
+    ],
+  },
+  {
+    name: 'help',
+    description: 'Not sure where to start? See what this bot can do for you',
     type: 1,
   },
 ];
