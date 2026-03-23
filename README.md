@@ -48,6 +48,16 @@ node index.js
 
 The server listens on `PORT` (default `3000`) and exposes a `POST /interactions` endpoint for Discord to send interactions to.
 
+### Exposing the endpoint to Discord
+
+Discord sends HTTP requests to your server, so the `/interactions` endpoint must be publicly reachable. If running locally, use a tunnel like [ngrok](https://ngrok.com):
+
+```bash
+ngrok http 3000
+```
+
+Then set the **Interactions Endpoint URL** in your Discord app's General Information page to `https://<your-ngrok-url>/interactions`.
+
 ## How it works
 
 The bot uses Discord's HTTP interactions model — Discord sends a POST request to your server for each command, and the bot responds synchronously. There is no persistent WebSocket connection.
