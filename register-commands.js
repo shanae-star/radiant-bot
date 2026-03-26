@@ -15,7 +15,7 @@ const commands = [
     ],
   },
   {
-    name: 'help',
+    name: 'helpme',
     description: 'Not sure where to start? See what this bot can do for you',
     type: 1,
   },

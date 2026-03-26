@@ -100,7 +100,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), (req, res
       });
     }
 
-    if (interaction.data.name === 'help') {
+    if (interaction.data.name === 'helpme') {
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
@@ -112,7 +112,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), (req, res
             'Type `/book` followed by the space name to get the link for that specific space.',
             'For example: `/book gallery`, `/book print`, `/book ceramics`',
             '',
-            'Type `/help` to see this message again.',
+            'Type `/helpme` to see this message again.',
           ].join('\n'),
         },
       });
