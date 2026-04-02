@@ -72,7 +72,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), (req, res
         return res.send({
           type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
           data: {
-            content: `**Here are all the spaces you can reserve:**\n${lines}\n\nNot sure which dates are open? Check the availability calendar here: ${AVAILABILITIES_URL}\n--\nTo get the link for one specific space, type "/book" followed by its name. For example: "/book gallery" or "/book print"`,
+            content: `**Here are all the spaces you can reserve:**\n${lines}\n\nNot sure which dates are open? Check the availability calendar here: ${AVAILABILITIES_URL}\n--\nTo get the link for one specific space, type "/book" followed by its name. For example: "/book 2nd floorgallery" or "/book print"`,
           },
         });
       }
@@ -87,7 +87,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), (req, res
         return res.send({
           type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
           data: {
-            content: `Sorry, we couldn't find a space called "${nameOption.value}".\nTry a shorter word — for example, "/book gallery" or "/book print".\nType "/book" to see the full list of spaces.`,
+            content: `Sorry, we couldn't find a space called "${nameOption.value}".\nTry a shorter word — for example, "/book 2nd floor gallery" or "/book print".\nType "/book" to see the full list of spaces.`,
           },
         });
       }
